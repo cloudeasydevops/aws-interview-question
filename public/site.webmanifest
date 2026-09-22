@@ -1,0 +1,17 @@
+{
+  "name": "AWS DevOps Interview Questions",
+  "short_name": "AWS DevOps",
+  "description": "Topic-wise AWS DevOps interview questions and interview preparation practice list.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

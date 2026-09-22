@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import questionsData from "./data/topics.json";
 
 type Topic = { title: string; questions: string[] };
@@ -114,6 +114,69 @@ export default function App() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [query, setQuery] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const topicTitle = DATA.topics[activeIndex]?.title ?? DATA.title;
+    const pageTitle = `${topicTitle} | ${DATA.title}`;
+    const descriptionText = `Prepare for AWS DevOps interviews with ${topicTitle} questions. Practice topic-wise AWS DevOps interview questions and improve your interview readiness.`;
+    const canonicalUrl = "https://www.example.com/";
+
+    document.title = pageTitle;
+
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement("meta");
+      metaDescription.setAttribute("name", "description");
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", descriptionText);
+
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement("meta");
+      metaKeywords.setAttribute("name", "keywords");
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute(
+      "content",
+      "AWS DevOps interview questions, AWS DevOps questions, AWS interview preparation, DevOps interview questions, AWS CI/CD, AWS cloud interview, AWS practice questions",
+    );
+
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute("href", canonicalUrl);
+
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: pageTitle,
+      description: descriptionText,
+      url: canonicalUrl,
+      mainEntity: {
+        "@type": "ItemList",
+        name: topicTitle,
+        numberOfItems: DATA.topics[activeIndex]?.questions.length ?? 0,
+        itemListElement: (DATA.topics[activeIndex]?.questions ?? []).map((question, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: question,
+        })),
+      },
+    };
+
+    let schemaScript = document.querySelector('script[data-schema="aws-devops"]');
+    if (!schemaScript) {
+      schemaScript = document.createElement("script");
+      schemaScript.setAttribute("type", "application/ld+json");
+      schemaScript.setAttribute("data-schema", "aws-devops");
+      document.head.appendChild(schemaScript);
+    }
+    schemaScript.textContent = JSON.stringify(schema);
+  }, [activeIndex]);
 
   const needle = normalize(query.trim());
 
