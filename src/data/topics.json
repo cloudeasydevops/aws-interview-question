@@ -1,0 +1,454 @@
+{
+  "title": "AWS DevOps Interview Questions",
+  "topics": [
+    {
+      "title": "1. Introduction / General",
+      "questions": [
+        "Q1. Tell me about yourself, your current project, and your responsibilities as a DevOps Engineer.",
+        "Q2. What are your day-to-day responsibilities in your current DevOps role?",
+        "Q3. Which stages are you involved in—requirement planning, design, deployment, monitoring, or all of them? Explain your involvement.",
+        "Q4. Do you have any questions for us?"
+      ]
+    },
+    {
+      "title": "2. AWS Networking (VPC, Subnets, Routing, Peering)",
+      "questions": [
+        "Q5. What is an AWS VPC? Can you explain its major components and how they work together?",
+        "Q6. Can you draw and explain a typical AWS VPC architecture?",
+        "Q7. What are the different types of subnets in a VPC, and how would you create them?",
+        "Q8. What is a route table, and how do VPCs, subnets, and route tables work together?",
+        "Q9. What is an Internet Gateway? How many Internet Gateways can a VPC have, and can you create more than one?",
+        "Q10. What is VPC Peering, how does it work, and how would you connect multiple VPCs?",
+        "Q11. What is the difference between AWS Transit Gateway and VPC Peering? If VPC A is peered with B and B is peered with C, can A communicate directly with C?",
+        "Q12. What is the difference between Network ACLs and Security Groups? If one rule allows traffic at priority 95 and another denies it at priority 101, which rule takes effect and why?",
+        "Q13. How would you connect an on-premises environment or another cloud such as Azure to AWS securely?",
+        "Q14. How would you establish secure communication between servers running across different clouds or between on-premises and AWS?",
+        "Q15. How would you securely connect to an EC2 instance located in a private subnet? What components would you configure?",
+        "Q16. A client needs VPN access to only 40 out of 100 EC2 instances in private subnets. How would you design the network access?",
+        "Q17. How does communication work between resources in a private subnet and a public subnet?",
+        "Q18. A database is deployed in a private subnet and must be accessed from on-premises. How would you design this connectivity securely?",
+        "Q19. What is CIDR notation, and how do you calculate and plan CIDR ranges for AWS VPCs?",
+        "Q20. Can you explain the OSI model, especially the difference between Layer 4 and Layer 7?",
+        "Q21. What is the difference between TCP and UDP, and when would you use each?",
+        "Q22. If an application has a VPC connectivity issue, how would you troubleshoot it step by step?",
+        "Q23. How would you troubleshoot subnet problems such as IP exhaustion or overlapping CIDR ranges?",
+        "Q24. How would you manage and optimize multiple VPCs across teams and environments?",
+        "Q25. How would you establish communication between two AWS VPCs?",
+        "Q26. What would you do if the available IP addresses in a VPC or subnet were exhausted and you needed to provision new resources?",
+        "Q27. What is the difference between Amazon API Gateway and an AWS Load Balancer, and when would you use each?"
+      ]
+    },
+    {
+      "title": "3. Load Balancers & DNS",
+      "questions": [
+        "Q28. What types of load balancers are available in AWS, and what are the use cases for ALB, NLB, and CLB?",
+        "Q29. What is the difference between an Application Load Balancer and a Network Load Balancer?",
+        "Q30. What are the main components and characteristics of Layer 7 load balancing?",
+        "Q31. How does an AWS load balancer distribute traffic across targets?",
+        "Q32. Which type of AWS load balancer would you consider for a connection-oriented real-time application such as a live call, and why?",
+        "Q33. Which type of load balancer operates at the network/transport layer and handles TCP connections and acknowledgements?",
+        "Q34. What is connection draining, and how does it work during deregistration of a target?",
+        "Q35. How would you implement load balancing across multiple AWS Regions?",
+        "Q36. Your application is behind an ALB and users receive 504 Gateway Timeout errors. How would you troubleshoot the issue step by step?",
+        "Q37. What is Amazon Route 53? What are hosted zones and the different routing policies available in Route 53?",
+        "Q38. What is a CDN, and how does it work? How would you use Amazon CloudFront in AWS?",
+        "Q39. How would you design a multi-Region AWS deployment that supports zero-downtime releases?"
+      ]
+    },
+    {
+      "title": "4. EC2 & Compute",
+      "questions": [
+        "Q40. What is the difference between EC2 Spot Instances and Reserved Instances? When would you use each?",
+        "Q41. How would you design a fault-tolerant and highly available EC2-based application?",
+        "Q42. You lost the private key for an EC2 instance. How would you regain secure access to the instance?",
+        "Q43. A user has an EC2 private key. How would you restrict or revoke that user's access to the server?",
+        "Q44. An EC2 instance was terminated unexpectedly. What possible causes would you investigate?",
+        "Q45. You cannot SSH into an EC2 instance. What would you check to identify the problem?",
+        "Q46. How would you block or restrict a malicious IP address from accessing an EC2 instance?",
+        "Q47. How would you monitor CPU and memory utilization on an EC2 instance using CloudWatch?",
+        "Q48. An EC2 instance has consistently high CPU utilization. How would you troubleshoot it using CloudWatch and Linux tools?",
+        "Q49. How does EC2 Auto Scaling work, and what steps would you follow to create an Auto Scaling Group?",
+        "Q50. A developer needs an EC2 instance for development and deployment. How would you choose the instance type and configure it?",
+        "Q51. How would you deploy a Java WAR file to an EC2 instance running Tomcat?",
+        "Q52. How would you automatically back up specific data from an EC2 instance at regular intervals?",
+        "Q53. How would you create a custom AMI, and which AWS tools or approaches can you use?"
+      ]
+    },
+    {
+      "title": "5. AWS Lambda & Serverless",
+      "questions": [
+        "Q54. What is AWS Lambda, and how does it work internally when a function is invoked?",
+        "Q55. What are the runtime and memory limits of AWS Lambda, and how would you handle a workload that exceeds the Lambda runtime limit?",
+        "Q56. How can a Lambda function be invoked, how does Lambda scale, and what is event-driven invocation?",
+        "Q57. What kind of AWS automation have you implemented using Lambda?",
+        "Q58. What modules or dependencies have you used in Lambda functions, and how do you package them?",
+        "Q59. Where is Lambda function code written and stored, and how is it deployed?",
+        "Q60. How would you securely transfer a payload between Lambda functions running in two different AWS accounts?",
+        "Q61. What is the difference between EC2 and Lambda, and how would you decide which one to use?"
+      ]
+    },
+    {
+      "title": "6. S3 & Storage",
+      "questions": [
+        "Q62. What S3 security features would you use to secure application data in an S3 bucket?",
+        "Q63. Can you directly attach an SSL certificate to an S3 bucket? If not, how would you serve an S3-hosted website over HTTPS?",
+        "Q64. Can you write an example S3 bucket policy for read-only access? How would you prevent unauthorized object modification?",
+        "Q65. Can S3 be used to install or host an application? Explain with an example.",
+        "Q66. What is the difference between S3 Standard and S3 Glacier storage classes, and when would you use each?",
+        "Q67. What are S3 Lifecycle policies, and how would you use them to automatically transition or delete objects?",
+        "Q68. How would you design a cost-efficient storage solution using Amazon S3?",
+        "Q69. You receive multiple files, need to bundle them into a ZIP, create a video, and store the output. Which AWS services would you use and how would you design the workflow?"
+      ]
+    },
+    {
+      "title": "7. IAM & Access Management",
+      "questions": [
+        "Q70. Can you explain role of IAM roles and policies?",
+        "Q71. Can you explain iAM policy to identify VPN login within a time window and allow/deny access?",
+        "Q72. How would you setting up 5 AWS accounts for a dev team — auth/authorization plan?",
+        "Q73. Can you explain groups vs Roles; is IAM Role limited to AWS services only?",
+        "Q74. Can you explain attaching policies to users individually vs by group?",
+        "Q75. Can you explain least privilege access for IAM users?",
+        "Q76. Can you explain protecting sensitive information?",
+        "Q77. Can you explain kMS vs CKMS?",
+        "Q78. Can you explain encryption types implemented in a project?"
+      ]
+    },
+    {
+      "title": "8. Security & DevSecOps",
+      "questions": [
+        "Q79. Can you explain explaining security to clients migrating on-prem to cloud?",
+        "Q80. Can you explain security approach when migrating from company network to public cloud?",
+        "Q81. Can you explain explaining different security layers during migration (e.g., network layer)?",
+        "Q82. Can you explain zero-trust security?",
+        "Q83. Can you explain common cloud misconfigurations and prevention?",
+        "Q84. Can you explain threats vs vulnerabilities?",
+        "Q85. Can you explain oWASP Top 10 and mitigation?",
+        "Q86. Can you explain securing CI/CD pipeline; security incident handling in CI/CD?",
+        "Q87. Can you explain devSecOps tools used?",
+        "Q88. How would you handling a cloud security breach?",
+        "Q89. Can you explain preventing DDoS on AWS?",
+        "Q90. Can you explain compliance handling in DevSecOps?",
+        "Q91. Can you explain automating patch management; security patching experience?",
+        "Q92. Can you explain security on Infrastructure as Code?",
+        "Q93. Can you explain aPI security in DevOps workflows?",
+        "Q94. Can you explain securing APIs accessible to users?",
+        "Q95. Scenario: secrets accidentally committed to Git — full remediation flow (assess exposure, rotate secrets, purge history with git filter-repo/BFG, force push, notify team, prevent recurrence with pre-commit hooks/Gitleaks/secret managers/CI scanning). How would you approach and resolve this as a DevOps Engineer?",
+        "Q96. Scenario: Kubernetes secrets pushed to Git — same remediation flow. How would you approach and resolve this as a DevOps Engineer?",
+        "Q97. Can you explain balancing speed vs security; handling security risk under release pressure?"
+      ]
+    },
+    {
+      "title": "9. Terraform / IaC",
+      "questions": [
+        "Q98. Can you explain what you do in Terraform day-to-day on a day-to-day basis?",
+        "Q99. Can you explain terraform plan — purpose?",
+        "Q100. Can you explain state file — management, locking mechanism, unlock commands?",
+        "Q101. Can you explain state file corruption — recovery from S3?",
+        "Q102. Can you explain state file storage/avoiding corruption?",
+        "Q103. Can you explain terraform drift — what it is, preventing it, fixing manual EC2 changes via Terraform?",
+        "Q104. Can you explain terraform taint vs destroy?",
+        "Q105. Can you explain terraform import — why used?",
+        "Q106. Can you explain null resources?",
+        "Q107. Can you explain provisioners?",
+        "Q108. Can you explain meta-arguments?",
+        "Q109. Can you explain terraform external data source — when to use?",
+        "Q110. Can you explain modules — why needed, how to reference/use them?",
+        "Q111. Can you explain terraform.tfvars vs variables.tf?",
+        "Q112. How would you handling secrets in Terraform; how secrets communication happens?",
+        "Q113. How would you ensuring specific AMI presence via Terraform?",
+        "Q114. Can you explain terraformgrunt (Terragrunt)?",
+        "Q115. Can you explain terraform lifecycle policies/blocks — purpose?",
+        "Q116. Can you explain defining dependencies in Terraform?",
+        "Q117. Can you explain provider block & registry block — sample?",
+        "Q118. Can you explain state locking when a single person works on Terraform?",
+        "Q119. Can you explain structuring Terraform code for best practices?",
+        "Q120. Can you explain terraform vs CloudFormation — why chosen?",
+        "Q121. Can you explain terraform vs Boto3 — why chosen?",
+        "Q122. Can you demonstrate the following in practice: sample scripts: create S3 bucket; create VPC/subnets/route tables; EC2 with Tomcat installed via user-data (run once on launch); EC2 tagging by environment?",
+        "Q123. Can you explain multi-region, zero-downtime deployment design in Terraform?"
+      ]
+    },
+    {
+      "title": "10. Docker",
+      "questions": [
+        "Q124. Can you explain docker overview; container vs VM?",
+        "Q125. Can you explain aDD vs COPY; ENTRYPOINT vs CMD; RUN vs CMD?",
+        "Q126. Can you explain dockerfile — write a sample and explain?",
+        "Q127. Can you explain multi-stage builds?",
+        "Q128. Can you explain docker volumes; container-to-container communication?",
+        "Q129. Can you explain docker networking; troubleshooting network issues?",
+        "Q130. Can you explain going inside a running container?",
+        "Q131. Can you explain viewing running containers; restarting a stopped container?",
+        "Q132. How would you troubleshooting a failed/continuously restarting container?",
+        "Q133. Can you explain container stops — what happens to the app?",
+        "Q134. How would you handling secrets in Docker images?",
+        "Q135. How would you optimizing docker image size and build pipeline for microservices?",
+        "Q136. Can you explain scanning images for vulnerabilities; getting the report?",
+        "Q137. Can you explain performance degradation over time — diagnosis?",
+        "Q138. Can you explain docker Service vs Docker Stack vs Docker Swarm?",
+        "Q139. Can you explain docker Compose vs Docker Swarm?",
+        "Q140. Can you demonstrate the following in practice: sample Dockerfile: httpd container copying a config file served on hit?",
+        "Q141. Can you demonstrate the following in practice: sample Dockerfile: Node.js app with best practices?"
+      ]
+    },
+    {
+      "title": "11. Kubernetes — Core Concepts",
+      "questions": [
+        "Q142. Can you explain kubernetes architecture (overview, multiple times)?",
+        "Q143. Can you explain kubectl command execution flow — components involved?",
+        "Q144. Can you explain service types in K8s and use cases?",
+        "Q145. Can you explain ingress — purpose; ingress vs service; why preferred over load balancers?",
+        "Q146. Can you explain configMap vs Secrets?",
+        "Q147. Can you explain daemonSet vs StatefulSet; what is DaemonSet?",
+        "Q148. Can you explain pV vs PVC; troubleshooting unbound PVC; storage issue in a pod?",
+        "Q149. Can you explain liveness probe vs readiness probe?",
+        "Q150. Can you explain node affinity vs node selector; pod affinity vs node affinity?",
+        "Q151. Can you explain kube-proxy role; kube-controller-manager role?",
+        "Q152. Can you explain etcd — use, what happens if etcd data is lost?",
+        "Q153. Can you explain kubectl apply vs kubectl create?",
+        "Q154. Can you explain podDisruptionBudget (PDB) — usage?",
+        "Q155. Can you explain init containers vs sidecar containers — purpose?",
+        "Q156. How would you restricting pod-to-pod communication within a namespace?",
+        "Q157. Can you explain service mesh — what it is?",
+        "Q158. Can you explain helm — usage/where applied?",
+        "Q159. Can you explain k8s vs Docker Swarm?"
+      ]
+    },
+    {
+      "title": "12. Kubernetes — Deployment & Operations",
+      "questions": [
+        "Q160. Can you explain writing a K8s deployment YAML?",
+        "Q161. Can you explain writing manifests: ConfigMap, database server with PVC mount, DaemonSet for replica agent?",
+        "Q162. Can you explain deployment strategy used in project (rolling, blue-green, canary, roll-out) — cost comparison?",
+        "Q163. How would you ensuring traffic to a specific worker node?",
+        "Q164. Can you explain communication flow: DNS (abc.com) to pod — end-to-end?",
+        "Q165. Can you explain designing low-latency global app on K8s?",
+        "Q166. Can you explain scaling a deployment dynamically?",
+        "Q167. How would you optimizing K8s for cost efficiency?",
+        "Q168. How would you handling sudden traffic spike when pods are slow to scale up?",
+        "Q169. Can you explain migration/cost optimization done on K8s?",
+        "Q170. Can you explain eKS cluster design and setup process?",
+        "Q171. Can you explain worker node instance types chosen; why R-type over M-type; performance engineering for instance selection?",
+        "Q172. Can you explain eKS version currently used; steps to upgrade cluster version (e.g., 1.33 → 1.34)?",
+        "Q173. How would you handling incompatible add-ons (e.g., nginx ingress-controller) post-upgrade?",
+        "Q174. Can you explain hA for stateful applications in K8s?",
+        "Q175. Can you explain alerting/metrics to monitor beyond CPU/memory/disk?",
+        "Q176. Can you explain security constraints in YAML — naming and purpose (Security Context / Pod Security Standards)?",
+        "Q177. Can you explain securing an already-deployed K8s cluster?",
+        "Q178. Can you explain aPI server under high load — optimization strategies?"
+      ]
+    },
+    {
+      "title": "13. Kubernetes — Troubleshooting Scenarios",
+      "questions": [
+        "Q179. Can you explain pod in CrashLoopBackOff — troubleshooting?",
+        "Q180. Can you explain node in Not Ready state — troubleshooting?",
+        "Q181. Can you explain deployment successful but app not externally accessible?",
+        "Q182. Can you explain node failure — what happens?",
+        "Q183. Can you explain cluster crashed — troubleshooting approach?",
+        "Q184. Can you explain pods restarting repeatedly, app going down — troubleshooting?",
+        "Q185. Can you explain out-of-memory issue in cluster — troubleshooting?",
+        "Q186. Can you explain deployment stuck in Pending state — troubleshooting?",
+        "Q187. Can you explain pods can't communicate with services — troubleshooting?",
+        "Q188. Can you explain app failures after cluster upgrade — resolution?",
+        "Q189. Can you demonstrate the following in practice: bash script: list pods in a namespace and restart CrashLoopBackOff ones?"
+      ]
+    },
+    {
+      "title": "14. CI/CD — Concepts & Strategy",
+      "questions": [
+        "Q190. Can you explain cI vs CD vs Continuous Deployment?",
+        "Q191. Can you explain ideal CI/CD pipeline design and strategy?",
+        "Q192. Can you explain main stages of a CI/CD pipeline; stages incl. build/deploy/security?",
+        "Q193. How would you ensuring pipeline doesn't deploy broken code?",
+        "Q194. Can you explain deployment rollback strategies (CI/CD and general)?",
+        "Q195. Can you explain automating deployment rollbacks (e.g., ArgoCD)?",
+        "Q196. Can you explain zero-downtime deployment strategies?",
+        "Q197. Can you explain blue-green vs canary vs rolling — differences, cost, when to use?",
+        "Q198. How would you reducing long build times / optimizing CI/CD pipeline?",
+        "Q199. Can you explain multi-branch pipelines (GitLab/Jenkins)?",
+        "Q200. How would you setting up CI/CD across multiple environments (Dev/UAT/Staging/Prod) with security stages?",
+        "Q201. How would you deploying same app across different environments?",
+        "Q202. Can you explain gitOps — concept?",
+        "Q203. Can you explain argoCD — usage?"
+      ]
+    },
+    {
+      "title": "15. Jenkins",
+      "questions": [
+        "Q204. Can you explain jenkins pipeline flow; declarative vs scripted pipeline?",
+        "Q205. Can you demonstrate the following in practice: sample Jenkinsfile — write and explain?",
+        "Q206. Can you demonstrate the following in practice: sample Jenkins pipeline syntax?",
+        "Q207. Can you explain jenkins Shared Libraries?",
+        "Q208. Can you explain groovy in Jenkins — usage, where Jenkinsfiles are stored?",
+        "Q209. Can you explain scheduling builds in Jenkins?",
+        "Q210. How would you restricting jobs to specific nodes?",
+        "Q211. Can you explain default Jenkins port; is it changeable, how?",
+        "Q212. How would you ensuring HA for Jenkins?",
+        "Q213. Can you explain auto-triggering Jenkins job on git commit (webhook)?",
+        "Q214. Can you explain gitHub-Jenkins integration — pull vs push based?",
+        "Q215. Can you explain separate Jenkins servers per environment?",
+        "Q216. Can you explain jenkins deployment: Terraform / scripting / CLI — which used?",
+        "Q217. How would you reducing build time in Jenkins pipelines?",
+        "Q218. Can you explain sonarQube integration in Jenkins; server configuration location?",
+        "Q219. Can you explain pipeline failed in prod but works in Dev — troubleshooting?"
+      ]
+    },
+    {
+      "title": "16. Git & Version Control",
+      "questions": [
+        "Q220. Can you explain git basics — why used, branching strategy?",
+        "Q221. Can you explain git branch strategy followed in org?",
+        "Q222. Can you explain git merge vs Git rebase — differences, when to use each in teams?",
+        "Q223. Can you explain resolving Git merge conflicts (multiple variants)?",
+        "Q224. Can you explain git hooks — usage?",
+        "Q225. Can you explain git submodules — usage?",
+        "Q226. Can you explain .gitkeep vs .gitignore?",
+        "Q227. Can you explain safely force-pushing in a shared repo?",
+        "Q228. Can you explain migrating a repo (e.g., GitHub → GitLab) with commit history — steps?",
+        "Q229. Can you explain versioning strategy for a project?",
+        "Q230. Can you explain common issues faced in GitHub?"
+      ]
+    },
+    {
+      "title": "17. Build Tools & Artifacts",
+      "questions": [
+        "Q231. Can you explain maven build process end-to-end; executing pom.xml?",
+        "Q232. Can you explain maven install vs Maven package?",
+        "Q233. Can you explain jAR vs WAR; deploying to Tomcat?",
+        "Q234. Can you explain artifact repository role in deployments; JFrog familiarity?",
+        "Q235. Can you explain staging build — meaning?",
+        "Q236. Can you explain sonarQube: code smell, bugs, vulnerabilities, technical debt, quality gate?"
+      ]
+    },
+    {
+      "title": "18. Monitoring, Logging & Observability",
+      "questions": [
+        "Q237. How would you monitoring tools used?",
+        "Q238. Can you explain prometheus + Grafana setup and integration?",
+        "Q239. How would you setting up Prometheus for a custom application?",
+        "Q240. Can you explain grafana alert for EC2 CPU > 90%?",
+        "Q241. Can you explain cloudWatch — custom metrics, CPU utilization dashboard configuration?",
+        "Q242. Can you explain eLK stack — flow, setup from scratch?",
+        "Q243. Can you explain log monitoring approach (out-of-box vs custom)?",
+        "Q244. Can you explain multi-cloud monitoring/logging strategy?",
+        "Q245. Can you explain metrics/alert rules for K8s cluster beyond CPU/mem/disk?",
+        "Q246. Can you explain alerting when tests pass but pod crash-loops?"
+      ]
+    },
+    {
+      "title": "19. Linux & Scripting",
+      "questions": [
+        "Q247. Can you explain current shell in use; default shell of CentOS/Linux?",
+        "Q248. Can you explain create and edit a file?",
+        "Q249. Can you explain check running processes (ps, alternatives)?",
+        "Q250. Can you explain check RAM/memory/disk usage; disk space commands?",
+        "Q251. Can you explain check open ports; kill a process on a specific port?",
+        "Q252. Can you explain network statistics command; display IP addresses; downloading a package?",
+        "Q253. Can you explain compress with tar; unzip a file; sync files?",
+        "Q254. Can you explain list files in reverse order?",
+        "Q255. Can you explain extract a specific word from a file?",
+        "Q256. Can you explain delete a specific line/name from a file and move to another file?",
+        "Q257. Can you explain file permissions — chmod, permission types?",
+        "Q258. Can you explain give execute permission to a file?",
+        "Q259. Can you explain inodes in Linux?",
+        "Q260. Can you explain iptables?",
+        "Q261. Can you explain cron jobs; grep and sed with examples?",
+        "Q262. Can you explain debugging a slow Linux server?",
+        "Q263. Can you explain identify which app is using a given port (e.g., 8089)?",
+        "Q264. Can you demonstrate the following in practice: shell script: CPU and memory monitoring?"
+      ]
+    },
+    {
+      "title": "20. Ansible",
+      "questions": [
+        "Q265. What is Ansible, its purpose, scripting language used?",
+        "Q266. Can you demonstrate the following in practice: sample playbook: print \"Hello World\" on 2 servers?",
+        "Q267. How would you deploying an app to 100 servers using Ansible?",
+        "Q268. Can you explain ansible Tower — overview?"
+      ]
+    },
+    {
+      "title": "21. Python & Automation",
+      "questions": [
+        "Q269. Can you explain python experience — where/how used in projects?",
+        "Q270. Can you explain python modules used in projects?",
+        "Q271. Can you explain python for handling API requests?",
+        "Q272. Can you explain python script: handling Excel workbook data?",
+        "Q273. Can you explain scheduling recurring cloud storage backup with Python?"
+      ]
+    },
+    {
+      "title": "22. Databases",
+      "questions": [
+        "Q274. Can you explain rDS overview; ensuring HA for RDS; scaling RDS under heavy load?",
+        "Q275. How would you deploying MySQL on EC2 — strategy?",
+        "Q276. Can you explain self-hosted database deployment approach?",
+        "Q277. Can you explain dynamoDB table request from dev team — strategy?",
+        "Q278. How would you deploying a database (e.g., CockroachDB) on K8s with PVC?"
+      ]
+    },
+    {
+      "title": "23. Cost Optimization",
+      "questions": [
+        "Q279. Can you explain cost optimization strategies used across cloud environment?",
+        "Q280. Can you explain sudden AWS billing spike — how to identify cost drivers?",
+        "Q281. Can you explain k8s cost optimization?"
+      ]
+    },
+    {
+      "title": "24. Disaster Recovery & High Availability",
+      "questions": [
+        "Q282. Can you explain disaster recovery planning and design (with diagram)?",
+        "Q283. Can you explain restoring app quickly if deployed in a single AZ that fails?",
+        "Q284. Can you explain what happens when an AWS region goes down?",
+        "Q285. Can you explain hA strategies in AWS generally?"
+      ]
+    },
+    {
+      "title": "25. Scenario-Based / Troubleshooting (General)",
+      "questions": [
+        "Q286. Can you explain production data deleted by mistake — response plan?",
+        "Q287. Can you explain multi-cloud deployment design for availability?",
+        "Q288. Can you explain app works in one environment, fails in another — cause and fix?",
+        "Q289. Can you explain app can't access S3 bucket — troubleshooting?",
+        "Q290. Can you explain 403 errors on application — troubleshooting?",
+        "Q291. Can you explain eC2 behind LB suddenly unavailable — troubleshooting?",
+        "Q292. Can you explain binary running in prod, new to team — tracing exact source code deployed?",
+        "Q293. Can you explain deployment failed — steps taken?",
+        "Q294. Can you explain long build times — cause and remedy?",
+        "Q295. Can you explain security vulnerabilities faced in automation?",
+        "Q296. Client reports servers going down every 20-25 min, needs urgent v1.5→v1.6 deploy (you're solo, manager on leave) — response plan What approach would you take?",
+        "Q297. Can you explain critical production outage handling?",
+        "Q298. Can you explain rolling back a deployment with major bugs?"
+      ]
+    },
+    {
+      "title": "26. Managerial / Behavioral",
+      "questions": [
+        "Q299. How would you handling a critical production outage?",
+        "Q300. Can you explain resolving conflicts within the DevOps team?",
+        "Q301. How would you managing multiple issues simultaneously?",
+        "Q302. How would you handling disagreements with the technical team?",
+        "Q303. Can you explain onboarding a new DevOps engineer?",
+        "Q304. Can you explain balancing speed and security?",
+        "Q305. How would you handling security risk under release pressure?",
+        "Q306. Can you explain dealing with developers resistant to DevOps practices?",
+        "Q307. Can you explain failed deployment story — what failed, how tracked, resolution?",
+        "Q308. Can you explain major service outage faced — explanation?",
+        "Q309. Can you explain 70% deployment time reduction, 35% delivery time reduction — how achieved (metrics story)?"
+      ]
+    },
+    {
+      "title": "27. Architecture & Design Concepts",
+      "questions": [
+        "Q310. Can you explain microservices vs monolithic architecture?",
+        "Q311. Can you explain stateful vs stateless applications?",
+        "Q312. Can you explain immutable infrastructure — concept and benefits?",
+        "Q313. Can you explain designing a microservice architecture on K8s?",
+        "Q314. Can you explain aI's role alongside DevOps/SRE tooling in projects?"
+      ]
+    }
+  ]
+}
