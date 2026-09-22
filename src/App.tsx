@@ -410,7 +410,7 @@ function Footer() {
           </a>
         ))}
       </div>
-      <p className="credit-line">Contributed by Divyanshu Tiwari</p>
+      <p className="credit-line">By Divyanshu Tiwari</p>
       <p className="credit-role">DevOps Engineer</p>
     </footer>
   );
